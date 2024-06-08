@@ -1,0 +1,55 @@
+COLUMNS:
+  Unnamed: int64
+  Index: int64
+  Address: object
+  Avg min between sent tnx: float64
+  Avg min between received tnx: float64
+  Time Diff between first and last (Mins): float64
+  Sent tnx: int64
+  Received Tnx: int64
+  Number of Created Contracts: int64
+  Unique Received From Addresses: int64
+  Unique Sent To Addresses: int64
+  min value received: float64
+  max value received: float64
+  avg val received: float64
+  min val sent: float64
+  max val sent: float64
+  avg val sent: float64
+  min value sent to contract: float64
+  max val sent to contract: float64
+  avg value sent to contract: float64
+  total transactions (including tnx to create contract: int64
+  total Ether sent: float64
+  total ether received: float64
+  total ether sent contracts: float64
+  total ether balance: float64
+  Total ERC20 tnxs: float64
+  ERC20 total Ether received: float64
+  ERC20 total ether sent: float64
+  ERC20 total Ether sent contract: float64
+  ERC20 uniq sent addr: float64
+  ERC20 uniq rec addr: float64
+  ERC20 uniq sent addr.1: float64
+  ERC20 uniq rec contract addr: float64
+  ERC20 avg time between sent tnx: float64
+  ERC20 avg time between rec tnx: float64
+  ERC20 avg time between rec 2 tnx: float64
+  ERC20 avg time between contract tnx: float64
+  ERC20 min val rec: float64
+  ERC20 max val rec: float64
+  ERC20 avg val rec: float64
+  ERC20 min val sent: float64
+  ERC20 max val sent: float64
+  ERC20 avg val sent: float64
+  ERC20 min val sent contract: float64
+  ERC20 max val sent contract: float64
+  ERC20 avg val sent contract: float64
+  ERC20 uniq sent token name: float64
+  ERC20 uniq rec token name: float64
+  ERC20 most sent token type: object
+  ERC20_most_rec_token_type: object
+
+TARGET_COLUMN:
+  name: FLAG
+
