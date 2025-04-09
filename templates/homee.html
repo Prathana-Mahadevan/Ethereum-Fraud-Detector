@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Display</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="buttons">
+            <button id="fetchBtn" onclick="fetchData()">Fetch Data</button>
+            <button id="predictBtn" onclick="predictData()" disabled>Predict Data</button>
+            <button id="clearBtn" onclick="clearData()" disabled>Clear Data</button>
+        
+        </div>
+        <div class="table-container">
+            <table id="data-table">
+                <!-- Table content will be added dynamically -->
+            </table>
+        </div>
+    </div>
+
+
+    <script>
+        function fetchData() {
+            fetch('/fetch_data')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    displayData(data);
+                    document.getElementById('predictBtn').disabled = false;  // Enable predict button
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        function clearData() {
+            document.getElementById('data-table').innerHTML = '';
+            document.getElementById('predictBtn').disabled = false;  // Enable predict button
+        }
+        
+        function predictData() {
+            fetch('/predict_data', {
+            method: 'GET'
+        })
+        .then(response => response.json())
+        .then(predictions => {
+            console.log( predictions )
+            displayPredictions(predictions);
+            document.getElementById('clearBtn').disabled = false;  // Enable clear button
+        })
+        .catch(error => console.error('Error predicting data:', error));
+}
+
+
+        function displayPredictions(predictions) {
+            const table_rows = document.querySelectorAll('tr');
+            
+            for( i=0; i<predictions.length; i++ ) {
+                if( predictions[i] ) {
+                    // fraud styling
+                    table_rows[i].bgColor = 'red'
+                }
+            }
+        }
+
+
+        function displayData(data) {
+            clearData();
+            const table = document.getElementById('data-table');
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                row.forEach(cellData => {
+                    const td = document.createElement('td');
+                    td.textContent = cellData;
+                    tr.appendChild(td);
+                });
+                table.appendChild(tr);
+            });
+
+        
+        }
+    </script>
+</body>
+</html>

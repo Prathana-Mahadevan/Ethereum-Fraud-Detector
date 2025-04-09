@@ -1,0 +1,39 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.buttons {
+    margin-bottom: 20px;
+}
+
+.buttons button {
+    margin-right: 10px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.fraud {
+    background-color: red;
+}
+
+.header-cell {
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}

@@ -1,18 +1,12 @@
-pandas 
-mlflow==2.2.2
-notebook
+pandas
 numpy
-scikit-learn
-imblearn
-matplotlib
 seaborn
-python-box==6.0.2
-pyYAML
-tqdm
-ensure==1.0.2
-joblib
-types-PyYAML
+matplotlib
+scikit-learn
+catboost
+xgboost
 Flask
-Flask-Cors
-lightgbm
--e .
+openpyxl
+mlflow
+#-e .
+dill
